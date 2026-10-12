@@ -1,0 +1,1 @@
+Projekt ne C++ per rindertimin e sekuences se ADN-se nga reads te shkurtra me gabime.
