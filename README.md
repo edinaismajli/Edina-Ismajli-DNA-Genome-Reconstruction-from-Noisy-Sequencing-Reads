@@ -1,25 +1,29 @@
 # DNA Genome Reconstruction
 
-Projekt ne C++ për rindërtimin e sekuencës së ADN-së nga reads të shkurtra me gabime.
+Projekt C++ për ta zhvilluar hap pas hapi në Visual Studio 2022.
 
-## Qëllimi
+## Struktura aktuale
 
-Programi do të zhvillohet hap pas hapi. Fillimisht do të përpunojë reads të vogla shembull; më vonë do të shtohen leximi i skedarëve, gjetja e mbivendosjeve dhe rindërtimi i sekuencës.
+- main.cpp — nis programin dhe përmban të dhënat e vogla për demonstrim.
+- Algorithms.h — deklarimet e algoritmeve.
+- Algorithms.cpp — implementimi i kërkimit linear.
+- DNA Genome Reconstruction.sln — zgjidhja për Visual Studio 2022.
 
-## Kërkimi linear
+## Gjendja
 
-Ky version kërkon një read duke i kontrolluar sekuencat një nga një. Shembulli kërkon `CGGTA` në një listë me tri reads.
+Versioni aktual kërkon një sekuencë në një listë të vogël. Kërkimi linear kontrollon reads një nga një.
 
-### Kompleksiteti
+Nëse n është numri i reads dhe L gjatësia maksimale e një read-i:
+- Koha: O(nL) në krahasime karakteresh (ose O(n) krahasime të reads).
+- Hapësira shtesë: O(1).
 
-Le të jenë:
+Relacioni i rekurrencës për rastin më të keq është T(n) = T(n - 1) + O(L), me rast bazë T(1) = O(L), pra T(n) = O(nL).
 
-- `n` numri i reads;
-- `L` gjatësia maksimale e një read-i.
+## Hapat e ardhshëm
 
-Në rastin më të keq, algoritmi i kontrollon të gjitha reads. Një krahasim mund të kontrollojë deri në `L` baza, prandaj:
+1. Shtimi i leximit të FASTQ-së.
+2. Testimi me një numër të vogël reads nga dataset-i.
+3. Gjetja dhe renditja e mbivendosjeve.
+4. Ndërtimi gradual i rindërtimit dhe raportimit.
 
-- Koha: `O(nL)` në operacione mbi karaktere, ose `O(n)` krahasime të reads.
-- Hapësira shtesë: `O(1)`, sepse algoritmi përdor vetëm disa variabla shtesë.
-
-Relacioni i rekurrencës për rastin më të keq është `T(n) = T(n - 1) + O(L)`, me rastin bazë `T(1) = O(L)`. Duke e zgjeruar, marrim `T(n) = O(nL)`.
+Dataset-i RNA-seq mund të përdoret për demonstrim të algoritmeve, por nuk përfaqëson rindërtim të plotë të gjenomit nga DNA-ja.

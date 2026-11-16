@@ -5,3 +5,11 @@ x64/
 *.user
 *.exe
 *.o
+
+# Të dhënat e mëdha të Kaggle mbahen lokalisht dhe nuk futen në Git.
+data/
+output/
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
