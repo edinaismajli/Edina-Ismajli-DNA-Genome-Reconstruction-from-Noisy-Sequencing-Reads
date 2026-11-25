@@ -5,6 +5,7 @@ x64/
 *.user
 *.exe
 *.o
+out/
 
 # Të dhënat e mëdha të Kaggle mbahen lokalisht dhe nuk futen në Git.
 data/
